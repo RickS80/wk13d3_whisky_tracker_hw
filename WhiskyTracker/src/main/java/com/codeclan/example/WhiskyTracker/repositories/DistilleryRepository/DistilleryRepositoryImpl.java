@@ -1,6 +1,7 @@
 package com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository;
 
 import com.codeclan.example.WhiskyTracker.models.Distillery;
+import com.codeclan.example.WhiskyTracker.models.Whisky;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -23,8 +24,11 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
         List<Distillery> result = null;
 
         Session session = entityManager.unwrap(Session.class);
+
         try {
+
             Criteria cr = session.createCriteria(Distillery.class);
+
             cr.add(Restrictions.eq("region", region));
             result = cr.list();
         } catch (HibernateException ex) {

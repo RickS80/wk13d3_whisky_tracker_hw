@@ -51,6 +51,11 @@ public class WhiskyTrackerApplicationTests {
 		List<Whisky> found = whiskyRepository.findWhiskyFromSpecificDistilleryWhichIsASpecificAge("Macallan", 25);
 	}
 
+	@Test
+	public void canGetAllWhiskyFromRegion(){
+		List<Whisky> found = whiskyRepository.getAllWhiskyFromARegion("Speyside");
+	}
+
 
 
 

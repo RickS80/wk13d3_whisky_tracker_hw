@@ -58,7 +58,7 @@ public class WhiskyTrackerApplicationTests {
 
 	@Test
 	public void canGetDistilleriesWhichHave12YrOldWhiskies(){
-		List<Distillery> found = distilleryRepository.findDistilleriesWithTwelveYrOldWhiskys();
+		List<Distillery> found = distilleryRepository.findDistilleriesWithTwelveYrOldWhiskys(12);
 	}
 
 

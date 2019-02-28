@@ -6,17 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface WhiskyRepository extends JpaRepository<Whisky, Long>, WhiskyRepositoryCustom {
+    // Spring Data JPA Method ("Derived") Query (no body needed)
+    List<Whisky> findWhiskysByYear(int year);
 
+    // Custom Criteria query defined in WhiskyRepositoryImpl
+    List<Whisky> getAllWhiskiesFromRegion(String region);
 
-
-//      JPA method queries
-    List<Whisky> getWhiskyByYear(int year);
+    // Spring Data JPA Method ("Derived") Query (no body needed)
     List<Whisky> findWhiskyByDistilleryIdAndAge(Long distilleryId, int age);
-
-
-//      Criteria queries
-
-    List<Whisky> findAllWhiskysFromAYear(int year);
-    List<Whisky> findWhiskyFromSpecificDistilleryWhichIsASpecificAge(String name, int age);
-    List<Whisky> getAllWhiskyFromARegion(String region);
 }
